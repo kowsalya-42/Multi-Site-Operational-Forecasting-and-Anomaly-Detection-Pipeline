@@ -1,22 +1,16 @@
 # Advanced Forecasting and Anomaly Detection Pipeline
 
-This project implements a robust forecasting and alerting pipeline for multi-site manufacturing operations.
+This repository delivers a robust analytics pipeline for multi-site industrial operations. The pipeline forecasts daily production units and power consumption for each site and automatically detects operational downtime anomalies.
 
-## Project Structure
+- **Automated 14-day forecasting** for both `units_produced` and `power_kwh` using advanced ML models (XGBoost) and baseline models for comparison.
+- **Interpretable anomaly detection** using rolling z-score for early alerts on downtime.
+- **CLI tool** for easy, flexible generation of forecasts and alerts by site and date range.
+- **Reproducible and modular**: Clean code structure, notebooks for EDA/modeling, and clear documentation ensure ease of use and extension.
+- **Business-ready outputs**: Forecast and alert CSVs ready for integration with operations.
 
-/advanced_forecasting
-│
-├── app/ # CLI application entrypoint
-├── src/ # Source modules (data loading, features, models, anomaly)
-├── models/ # Pretrained ML models (XGBoost)
-├── logic_horizon_datasets # Input datasets
-├── notebooks/ # Exploratory Data Analysis and model development notebooks
-├── outputs/ # Generated forecasts and anomaly alerts CSVs
-├── requirements.txt # Python dependencies
-└── README.md # This file
 
 ## Setup
-. **Clone the repository**
+1. **Clone the repository**
 
 git clone <repo_url>
 cd advanced_forecasting
@@ -78,12 +72,10 @@ Explore the notebooks in `notebooks/` for EDA, feature engineering, modeling, an
 
 - Data loading and merging from multiple temporal datasets
 - Feature engineering: temporal, lag, rolling features
-- Forecasting: Prophet and XGBoost models
+- Forecasting: XGBoost models
 - Anomaly detection: Z-score based on downtime
 - Evaluation: MAE, MAPE
 
 ## Executive Brief
 
-See `executive_brief.md` for business insights.
-
-python -m app.app forecast --site S1 --start 2025-09-11 --end 2025-09-30
+See `executive_brief.pdf` for business insights.
